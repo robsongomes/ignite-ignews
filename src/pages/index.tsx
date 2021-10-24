@@ -1,8 +1,10 @@
 import Head from "next/head";
+import Image from "next/image";
 import { GetServerSideProps } from "next";
 import { SubscribeButton } from "../components/SubscribeButton";
 import styles from "./home.module.scss";
 import { stripe } from "../services/stripe";
+import Avatar from "../../../public/images/avatar.svg";
 
 interface HomeProps {
   product: {
@@ -41,7 +43,7 @@ export default function Home({ product }: HomeProps) {
           </p>
           <SubscribeButton priceId={product.priceId} />
         </section>
-        <img src="/images/avatar.svg" alt="Girl codiging" />
+        <Image src={Avatar} alt="Girl codiging" />
       </main>
     </>
   );
